@@ -5,24 +5,15 @@ Johnson-Trotter-Permutations
 C implementation of the Johnson–Trotter algorithm to generate permutations. The next permutation is created by swapping only 2 values. More info [here](http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm) and [here](http://www.cut-the-knot.org/Curriculum/Combinatorics/JohnsonTrotter.shtml).
 
 ##How to use
-####1. Set the input array type
-Go to [jt_perm.h](https://github.com/dumrelu/Johnson-Trotter-Permutations/blob/master/jt_perm.h) and change the
-typedef of _jt_value_t_ to type you want.
+####1. Create a handle
+Create a handle by giving the number of elements in the array and the size of
+an element.
 ```c
-/*Examples*/
-typedef int jt_value_t;        //Generate permutations for an array of ints
-typedef double jt_value_t;     //Generate permutations for an array of doubles
-typedef myType jt_value_t;     //Generate permutations for an array of myTypes
+jt_handle_t *h = jt_create(number_of_elements, element_size);
 ```
-
-####2. Create a handle
-Create a handle by giving the size of the array.
-```c
-jt_handle_t *h = jt_create(size_of_array);
-```
-####3. Generate permutations
-Generate the permutations using `jt_next_perm()` which takes as the first parameter the handle and the second 
-parameter an array of `jt_value_t`.
+####2. Generate permutations
+Generate the permutations using `jt_next_perm()` which takes as the first parameter the handle and as the second 
+parameter the array where to make the swap.
 
 ```c
 do {
@@ -30,7 +21,7 @@ do {
 } while(jt_next_perm(h, myArray));
 ```
 
-####4. Free the handle
+####3. Free the handle
 After you're done don't forget to free the memory using `jt_free()`
 ```c
 jt_free(h);
