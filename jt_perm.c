@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "jt_perm.h"
 
-#include <unistd.h>
-
 #define LEFT -1
 
 //Directed integer internal structure
