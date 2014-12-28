@@ -28,15 +28,13 @@
 /* Handle used to save the current state of the algorithm. */
 typedef struct jt_handle jt_handle_t;
 
-/* Input type for the array of permutations. */
-typedef int jt_value_t;
-
 /* 
  * Create the handle used to generate the permutation for an
- *array of *n* elements.
+ *array of *n* elements, each element having the size *size*.
  */
 jt_handle_t *jt_create(
-	int n
+	size_t n, 
+	size_t size
 );
 
 /*
@@ -47,7 +45,7 @@ jt_handle_t *jt_create(
  */
 int jt_next_perm(
 	jt_handle_t *h, 
-	jt_value_t *array
+	void *array
 );
 
 /*
