@@ -22,13 +22,13 @@ do {
 ```
 
 ####3. Free the handle
-After you're done don't forget to free the memory using `jt_free()`
+After you're done don't forget to free the memory using `jt_free()`.
 ```c
 jt_free(h);
 ```
 
 ##Complete example
-You can find a complete example in [main.c](https://github.com/dumrelu/Johnson-Trotter-Permutations/blob/master/main.c).
+You can find a complete example in [main.c](https://github.com/dumrelu/Johnson-Trotter-Permutations/blob/master/src/main.c).
 
 ##Examples outputs
 ####3 element array permutations
