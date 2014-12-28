@@ -1,4 +1,4 @@
 compile:
-	gcc main.c jt_perm.c -o jt_perm
+	gcc src/main.c src/jt_perm.c -o jt_perm
 exec: compile
 	./jt_perm
