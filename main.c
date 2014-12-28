@@ -12,13 +12,13 @@ void print(int *test, int n)
 
 int main(int argc, char *argv[])
 {
-	int test[] = { 1, 2, 3, 4};
-	int n = sizeof(test) / sizeof(int);
-	jt_handle_t *h = jt_create(n);
+	int myArray[] = { 1, 2, 3};
+	int size_of_array = sizeof(myArray) / sizeof(myArray[0]);
+	jt_handle_t *h = jt_create(size_of_array);
 
-	print(test, n);
-	while(jt_next_perm(h, test))
-		print(test, n);
+	do {
+		print(myArray, size_of_array);
+	} while(jt_next_perm(h, myArray));
 
 	jt_free(h);
 
